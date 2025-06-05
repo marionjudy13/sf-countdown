@@ -57,7 +57,7 @@ export default function Hero() {
           {/* Spotify Embed Right Below Text */}
           <div className={styles.spotifyEmbed}>
             <iframe
-              src="https://open.spotify.com/embed/playlist/1FR7I3cuYyv7MRB2SrxL0J?utm_source=generator"
+              src="https://open.spotify.com/embed/playlist/52LLdNeLhPuS9oqtNFFD35?utm_source=generator"
               width="100%"
               height="152"
               frameBorder="0"
