@@ -10,8 +10,21 @@ const robotoCondensed = Roboto_Condensed({
 export const metadata = {
   title: "SF Countdown",
   description: "Over here being ridiculous.",
-  icons: {
-    icon: "/sf-favicon.ico",
+  openGraph: {
+    title: "San Francisco Countdown",
+    description: "This is so dumb omg",
+    url: "https://sf-countdown.vercel.app/",
+    siteName: "SF Countdown",
+    images: [
+      {
+        url: "https://sf-countdown.vercel.app/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Golden Gate with event countdown overlay, why did I do this?",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
 };
 
