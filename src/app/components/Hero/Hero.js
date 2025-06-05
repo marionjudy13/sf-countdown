@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
-  const targetDate = new Date("2025-08-24T00:00:00");
+  const targetDate = new Date("2025-07-31T00:00:00");
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 
   function getTimeRemaining() {
