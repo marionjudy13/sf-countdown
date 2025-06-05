@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
-  const targetDate = new Date("2025-07-31T00:00:00");
-  const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
+  const targetDate = new Date("2025-07-04T00:00:00");
+  const [timeLeft, setTimeLeft] = useState(null);
 
   function getTimeRemaining() {
     const total = targetDate - new Date();
@@ -17,6 +17,7 @@ export default function Hero() {
   }
 
   useEffect(() => {
+    setTimeLeft(getTimeRemaining());
     const timer = setInterval(() => {
       setTimeLeft(getTimeRemaining());
     }, 1000);
@@ -33,22 +34,38 @@ export default function Hero() {
         loop
         playsInline
       />
-
       <img src="/images/sf.jpg" alt="Overlay" className={styles.imageOverlay} />
 
       <div className={styles.overlay}>
         <div className={styles.text}>
           <h1>San Francisco Countdown:</h1>
           <p>
-            {timeLeft.total > 0 ? (
-              <>
-                {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
-                {timeLeft.seconds}s
-              </>
+            {timeLeft ? (
+              timeLeft.total > 0 ? (
+                <>
+                  {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
+                  {timeLeft.seconds}s
+                </>
+              ) : (
+                "🎉 It’s time!"
+              )
             ) : (
-              "🎉 It’s time!"
+              "Loading..."
             )}
           </p>
+
+          {/* Spotify Embed Right Below Text */}
+          <div className={styles.spotifyEmbed}>
+            <iframe
+              src="https://open.spotify.com/embed/playlist/1FR7I3cuYyv7MRB2SrxL0J?utm_source=generator"
+              width="100%"
+              height="152"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style={{ borderRadius: "12px" }}
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
